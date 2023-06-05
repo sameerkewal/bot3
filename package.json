@@ -1,0 +1,17 @@
+{
+  "name": "slatt",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "index.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase": "^9.22.0",
+    "node-fetch": "^3.3.1",
+    "puppeteer": "^20.2.0",
+    "spotify-buddylist": "^1.0.0"
+  }
+}
