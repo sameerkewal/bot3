@@ -12,6 +12,6 @@
     "firebase": "^9.22.0",
     "node-fetch": "^3.3.1",
     "puppeteer": "^20.2.0",
-    "spotify-buddylist": "^1.0.0",
+    "spotify-buddylist": "^1.0.0"
   }
 }
