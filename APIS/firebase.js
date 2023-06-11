@@ -198,6 +198,7 @@ exports.getTokens = getTokens;
 exports.getMoreTokens = getMoreTokens;
 exports.getRegisteredUserInfo = getRegisteredUserInfo;
 exports.updateAllTokensInFirebase = updateAllTokensInFirebase;
+exports.wait=wait
 
 
 

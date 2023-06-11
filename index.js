@@ -31,7 +31,7 @@ eventHandler(client);
 client.on("ready", function(c) {
     console.log(`${c.user.username} is online`)
         /*let random = Math.floor(Math.random() * createStatus().length)*/
-       client.user.setActivity({name: 'around',  type:ActivityType.Streaming, url: 'https://youtu.be/dQw4w9WgXcQ'});
+       client.user.setActivity({name: 'HEEHEEHAW'});
 
 })
 
@@ -105,6 +105,7 @@ client.on('interactionCreate', async (interaction) => {
            const url = await getSong(id)
            const lyrics = await getActualLyrics(url)
 
+
            const maxLength = 1994;
            let startIndex = 0;
 
@@ -129,7 +130,7 @@ client.on('interactionCreate', async (interaction) => {
     }
 
 })
-
+console.log(process.env.DISCORD_TOKEN);
 // Bot Login
 client.login(getMoreTokens().discord_token);
 keepAlive();
