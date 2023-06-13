@@ -2,7 +2,7 @@ const {getRegisteredUserInfo, updateDiscordTokens} = require("../../APIS/firebas
 const {refreshDiscToken, refreshAllTokensFinal
 } = require("../../APIS/discord");
 const {getRecentlyPlayed} = require("../../APIS/getCurrentSong");
-const {getLyrics} = require("../../APIS/musixmatch");
+const {puppetteerMethod} = require("../../APIS/genius");
 
 require('dotenv').config();
 module.exports={
@@ -17,8 +17,8 @@ module.exports={
          const userid = interaction.member.user.id
             let userInfo;
 
-            const lyrics = await getLyrics();
-            await interaction.editReply({content: `${lyrics}`})
+            const lyrics = await puppetteerMethod();
+            await interaction.editReply({content: `ekek`})
 
             const endTime = Date.now();
             const responseTime = endTime - startTime;

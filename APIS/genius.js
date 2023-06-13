@@ -1,6 +1,8 @@
 const fs = require('fs');
 const cheerio = require('cheerio')
 const {getMoreTokens} = require("./firebase");
+const puppeteer = require("puppeteer");
+const {devices} = require("puppeteer");
 
 
 async function getSongOnGenius(information){
@@ -58,6 +60,7 @@ async function getSong(id){
 
 
     async function getActualLyrics(url){
+
        const website = await fetch(url)
         if(website.ok){
             const html = await website.text();
@@ -69,10 +72,49 @@ async function getSong(id){
         }
 
     }
+async function puppetteerMethod(){
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
 
+
+    await page.setViewport({width:1366, height:768});
+
+
+
+    const httpResponse = await page.goto('https://genius.com/Lana-del-rey-a-w-lyrics',
+        {
+            waitUntil: 'domcontentloaded'
+        });
+
+
+
+    const htmlContent = await page.content();
+    fs.writeFileSync('page.html', htmlContent);
+
+
+
+    const element = await page.$$('.Lyrics__Container-sc-1ynbvzw-5.Dzxov');
+    console.log(element)
+
+    element.forEach((async element => {
+        const html = await page.evaluate(el => el.textContent, element)
+        html.find('br').replaceWith('\n');
+        console.log(html);
+    }))
+
+    //todo: make this similair to the cheerio method
+
+
+
+    await page.screenshot({path: './screenshot.png'})
+
+    await browser.close();
+
+}
 
 exports.getSongOnGenius = getSongOnGenius;
 exports.getGeniusToken = getGeniusToken;
 exports.getSong = getSong;
 exports.getActualLyrics = getActualLyrics;
+exports.puppetteerMethod=puppetteerMethod;
 
