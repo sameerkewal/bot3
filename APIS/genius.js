@@ -66,6 +66,7 @@ async function getSong(id){
             const html = await website.text();
             const $ =  cheerio.load(html)
             const lyricsContainer = $('.Lyrics__Container-sc-1ynbvzw-5.Dzxov')
+            console.log(lyricsContainer);
             lyricsContainer.find('br').replaceWith('\n');
             const lyrics = lyricsContainer.text().trim()
             return lyrics;

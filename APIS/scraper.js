@@ -5,6 +5,7 @@ require('dotenv').config();
 
 
 async function getResult(){
+    console.log(process.env.LINK)
     const browser = await puppeteer.launch();
 
     const page = await browser.newPage();
