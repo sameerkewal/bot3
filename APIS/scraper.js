@@ -7,7 +7,6 @@ require('dotenv').config();
 async function getResult(){
     console.log(process.env.LINK)
     const browser = await puppeteer.launch({headless:"new", userDataDir: "/opt/render/.cache/puppeteer"});
-
     const page = await browser.newPage();
 
     const httpResponse = await page.goto(process.env.LINK, {

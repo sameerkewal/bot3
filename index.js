@@ -31,7 +31,8 @@ eventHandler(client);
 client.on("ready", function(c) {
     console.log(`${c.user.username} is online`)
         /*let random = Math.floor(Math.random() * createStatus().length)*/
-       client.user.setActivity({name: 'HEEHEEHAW'});
+       client.user.setActivity({name: 'testing'});
+
 
 })
 
@@ -39,6 +40,7 @@ client.on("ready", function(c) {
     if(message.author.bot){
         return;
     }
+
 
 
 })*/
