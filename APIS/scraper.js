@@ -5,7 +5,6 @@ require('dotenv').config();
 
 
 async function getResult(){
-    console.log(process.env.LINK)
     const browser = await puppeteer.launch({headless:"new", userDataDir: "/opt/render/.cache/puppeteer"});
     const page = await browser.newPage();
 
@@ -34,7 +33,6 @@ async function getResult(){
 
     const element =  await page.$$('.ninja_column_1.ninja_clmn_nm_status.footable-last-visible')
     if(element.length === 1){
-        console.log(process.env.READY)
         console.log('No Luck!')
         return 'No Luck!';
     }

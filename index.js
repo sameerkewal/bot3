@@ -132,7 +132,6 @@ client.on('interactionCreate', async (interaction) => {
     }
 
 })
-console.log(process.env.DISCORD_TOKEN);
 // Bot Login
 client.login(getMoreTokens().discord_token);
 keepAlive();

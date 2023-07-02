@@ -6,6 +6,7 @@ const {getResult} = require("../../APIS/scraper")
 module.exports={
     name: 'test',
     description: 'test',
+    deleted: true,
 
     callback: async(client,interaction)=>{
         if(interaction.commandName==='test'){

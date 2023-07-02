@@ -17,12 +17,21 @@ async function getSongOnGenius(information){
     })
     const data = await results.json()
     const allHits = data.response.hits
+
+
+/*
+
     const filteredArray = allHits.filter((hit)=>{
         return hit.result.language === 'en';
 
-    })
 
-    return filteredArray[0].result.id;
+    })
+*/
+
+
+
+
+    return allHits[0].result.id;
 }
 
 async function getGeniusToken(){
